@@ -59,9 +59,9 @@
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
     padding: 1.25rem 2rem;
-    background: rgba(255,255,255,0.92);
-    backdrop-filter: blur(20px);
+    background: rgba(255,255,255,0.97);
     border-bottom: 1px solid var(--border);
+    transform: translateZ(0);
   }
   .nav-logo {
     font-family: var(--font-display);
@@ -97,6 +97,7 @@
 
   /* ---- HERO ---- */
   .hero {
+    min-height: 100svh;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -182,7 +183,7 @@
       linear-gradient(var(--border) 1px, transparent 1px),
       linear-gradient(90deg, var(--border) 1px, transparent 1px);
     background-size: 60px 60px;
-    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 100%);
+    opacity: 0.5;
   }
 
   /* ---- LOGOS / SOCIAL PROOF ---- */
@@ -696,7 +697,7 @@
     Your business<br>deserves a<br><em>real presence.</em>
   </h1>
   <p class="fade-up delay-2">
-    We build websites, digital tools, and online systems for Caribbean businesses serious about growth.
+    We build websites, digital tools, and online systems for businesses serious about growth.
   </p>
   <div class="hero-actions fade-up delay-3">
     <a href="#contact" class="btn-primary">Start a Project</a>
@@ -709,17 +710,6 @@
   </div>
 </div>
 
-<!-- SOCIAL PROOF -->
-<div class="proof">
-  <p>Built for entrepreneurs across</p>
-  <div class="proof-items">
-    <span class="proof-item">Jamaica</span>
-    <span class="proof-item">Trinidad</span>
-    <span class="proof-item">Barbados</span>
-    <span class="proof-item">Guyana</span>
-    <span class="proof-item">Diaspora</span>
-  </div>
-</div>
 
 <!-- SERVICES -->
 <section id="services">
@@ -921,7 +911,7 @@
       <div class="contact-info">
         <div class="contact-info-item">
           <div class="contact-info-icon">📍</div>
-          Based in Jamaica, serving the Caribbean & diaspora
+          Based in Jamaica
         </div>
         <div class="contact-info-item">
           <div class="contact-info-icon">✉️</div>
@@ -978,7 +968,7 @@
     <div class="logo">Press<span>ence</span></div>
     <p style="font-size:0.78rem;color:var(--muted-2);margin-top:0.3rem;">Your business deserves the best.</p>
   </div>
-  <p>© 2026 Pressence. Jamaica & Caribbean.</p>
+  <p>© 2026 Pressence.</p>
   <div class="footer-links">
     <a href="#services">Services</a>
     <a href="#pricing">Pricing</a>
