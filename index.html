@@ -19,8 +19,8 @@
     --text: #0a0a0c;
     --muted: #52525b;
     --muted-2: #a1a1aa;
-    --accent: #d4f24a;
-    --accent-dim: rgba(212,242,74,0.2);
+    --accent: #1e3a8a;
+    --accent-dim: rgba(30,58,138,0.08);
     --accent-dim2: #ebebef;
     --font-display: 'Syne', sans-serif;
     --font-body: 'DM Sans', sans-serif;
@@ -66,7 +66,7 @@
   .nav-links a:hover { color: var(--text); }
   .nav-cta {
     background: var(--accent) !important;
-    color: #09090b !important;
+    color: #ffffff !important;
     padding: 0.5rem 1.25rem;
     border-radius: 6px;
     font-weight: 600 !important;
@@ -136,7 +136,7 @@
   .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
   .btn-primary {
     background: var(--accent);
-    color: #09090b;
+    color: #ffffff;
     padding: 0.85rem 2rem;
     border-radius: 8px;
     font-weight: 600;
@@ -238,7 +238,7 @@
   .service-icon {
     width: 44px; height: 44px;
     background: var(--accent-dim);
-    border: 1px solid rgba(212,242,74,0.2);
+    border: 1px solid rgba(30,58,138,0.15);
     border-radius: 10px;
     display: flex; align-items: center; justify-content: center;
     margin-bottom: 1.5rem;
@@ -262,7 +262,7 @@
     margin-top: 1.25rem;
     font-size: 0.75rem;
     color: var(--accent);
-    border: 1px solid rgba(212,242,74,0.25);
+    border: 1px solid rgba(30,58,138,0.2);
     padding: 0.2rem 0.65rem;
     border-radius: 100px;
     font-weight: 500;
@@ -287,12 +287,12 @@
   .pricing-card:hover { border-color: var(--border-hover); }
   .pricing-card.featured {
     background: var(--bg-3);
-    border-color: rgba(212,242,74,0.3);
+    border-color: rgba(30,58,138,0.25);
   }
   .pricing-badge {
     position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
     background: var(--accent);
-    color: #09090b;
+    color: #ffffff;
     font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -352,9 +352,9 @@
     width: 16px; height: 16px;
     min-width: 16px;
     background: var(--accent-dim);
-    border: 1px solid rgba(212,242,74,0.3);
+    border: 1px solid rgba(30,58,138,0.25);
     border-radius: 50%;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath d='M2 5l2.5 2.5L8 3' stroke='%23d4f24a' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath d='M2 5l2.5 2.5L8 3' stroke='%231e3a8a' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: center;
     margin-top: 2px;
@@ -376,7 +376,7 @@
   .pricing-cta-ghost:hover { border-color: var(--accent); color: var(--accent); }
   .pricing-cta-solid {
     background: var(--accent);
-    color: #09090b;
+    color: #ffffff;
   }
   .pricing-cta-solid:hover { opacity: 0.87; }
 
@@ -481,7 +481,7 @@
   select option { background: var(--bg-3); }
   .form-submit {
     background: var(--accent);
-    color: #09090b;
+    color: #ffffff;
     padding: 0.9rem 2rem;
     border: none;
     border-radius: 8px;
@@ -527,6 +527,109 @@
   }
   footer .footer-links a:hover { color: var(--muted); }
 
+  /* ---- PORTFOLIO ---- */
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3.5rem;
+  }
+  .portfolio-card {
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--bg-2);
+    transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+  }
+  .portfolio-card:hover {
+    border-color: var(--border-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.07);
+  }
+  .portfolio-browser-bar {
+    background: var(--bg-3);
+    border-bottom: 1px solid var(--border);
+    padding: 0.55rem 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+  }
+  .browser-dots { display: flex; gap: 0.3rem; flex-shrink: 0; }
+  .browser-dots span {
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: var(--border-hover);
+  }
+  .browser-url {
+    font-size: 0.7rem;
+    color: var(--muted-2);
+    flex: 1;
+    text-align: center;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.18rem 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .portfolio-screenshot {
+    aspect-ratio: 16/10;
+    overflow: hidden;
+    background: var(--bg-3);
+  }
+  .portfolio-screenshot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+  .portfolio-card:hover .portfolio-screenshot img { transform: scale(1.03); }
+  .portfolio-info {
+    padding: 1.1rem 1.4rem 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .portfolio-name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: -0.01em;
+  }
+  .portfolio-right { display: flex; align-items: center; gap: 0.9rem; }
+  .portfolio-live {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #16a34a;
+    background: rgba(22,163,74,0.08);
+    border: 1px solid rgba(22,163,74,0.2);
+    padding: 0.2rem 0.6rem;
+    border-radius: 100px;
+    white-space: nowrap;
+  }
+  .live-dot {
+    width: 6px; height: 6px;
+    background: #16a34a;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  .portfolio-link {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: opacity 0.2s;
+  }
+  .portfolio-link:hover { opacity: 0.7; }
+
   /* ---- RESPONSIVE ---- */
   @media (max-width: 768px) {
     nav { padding: 1rem 1.25rem; }
@@ -560,6 +663,7 @@
     <a href="#services">Services</a>
     <a href="#pricing">Pricing</a>
     <a href="#process">Process</a>
+    <a href="#work">Work</a>
     <a href="#contact" class="nav-cta">Get Started</a>
   </div>
 </nav>
@@ -610,7 +714,7 @@
     <div class="service-card">
       <div class="service-icon">🌐</div>
       <h3>Business Websites</h3>
-      <p>Professional, fast, mobile-first websites for SMEs and entrepreneurs. Built to convert visitors into customers — not just look good.</p>
+      <p>Professional, fast, mobile-first websites for SMEs and entrepreneurs. Built to convert visitors into customers, not just look good.</p>
       <span class="service-tag">From $500 USD</span>
     </div>
 <div class="service-card">
@@ -735,6 +839,34 @@
       <div class="step-num">05</div>
       <h4>Launch</h4>
       <p>We go live. You get your domain, access credentials, and everything you need to run it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="work">
+  <div class="section-label">Our Work</div>
+  <h2 class="section-title">What we've built.</h2>
+  <p class="section-sub">Real projects for real businesses. Each one live and running.</p>
+
+  <div class="portfolio-grid">
+    <div class="portfolio-card">
+      <div class="portfolio-browser-bar">
+        <div class="browser-dots">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="browser-url">trgsensei.com</div>
+      </div>
+      <div class="portfolio-screenshot">
+        <img src="https://image.thum.io/get/width/680/crop/425/https://trgsensei.com" alt="TRG Sensei website" loading="lazy">
+      </div>
+      <div class="portfolio-info">
+        <span class="portfolio-name">TRG Sensei</span>
+        <div class="portfolio-right">
+          <span class="portfolio-live"><span class="live-dot"></span>Live</span>
+          <a href="https://trgsensei.com" target="_blank" rel="noopener" class="portfolio-link">Visit site ↗</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
