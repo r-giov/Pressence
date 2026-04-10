@@ -925,32 +925,31 @@
       <div class="form-row">
         <div class="form-group">
           <label for="name">Your name</label>
-          <input type="text" id="name" placeholder="Jane Smith" required>
+          <input type="text" id="name" name="name" placeholder="Jane Smith" required>
         </div>
         <div class="form-group">
           <label for="business">Business name</label>
-          <input type="text" id="business" placeholder="Jane's Bakery">
+          <input type="text" id="business" name="business" placeholder="Jane's Bakery">
         </div>
       </div>
       <div class="form-group">
         <label for="email">Email address</label>
-        <input type="email" id="email" placeholder="jane@yourbusiness.com" required>
+        <input type="email" id="email" name="email" placeholder="jane@yourbusiness.com" required>
       </div>
       <div class="form-group">
         <label for="service">What do you need?</label>
-        <select id="service">
+        <select id="service" name="service">
           <option value="">Select a service...</option>
           <option>Business website</option>
-
           <option>Booking system</option>
           <option>Custom digital tool / SaaS</option>
           <option>Landing page / funnel</option>
-          <option>Not sure — need advice</option>
+          <option>Not sure, need advice</option>
         </select>
       </div>
       <div class="form-group">
         <label for="message">Tell us about your project</label>
-        <textarea id="message" placeholder="What does your business do, and what are you hoping to achieve online?"></textarea>
+        <textarea id="message" name="message" placeholder="What does your business do, and what are you hoping to achieve online?"></textarea>
       </div>
       <button type="submit" class="form-submit">Send Message →</button>
     </form>
@@ -972,20 +971,45 @@
 </footer>
 
 <script>
-function handleSubmit(e) {
+async function handleSubmit(e) {
   e.preventDefault();
-  const btn = e.target.querySelector('.form-submit');
-  btn.textContent = 'Message sent ✓';
-  btn.style.background = '#e4e4e7';
-  btn.style.color = '#71717a';
+  const form = e.target;
+  const btn = form.querySelector('.form-submit');
+
+  btn.textContent = 'Sending...';
   btn.disabled = true;
-  setTimeout(() => {
-    btn.textContent = 'Send Message →';
-    btn.style.background = '';
-    btn.style.color = '';
+
+  try {
+    const res = await fetch('https://formspree.io/f/mvzvjdlw', {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+    if (res.ok) {
+      btn.textContent = 'Message sent ✓';
+      btn.style.background = '#e4e4e7';
+      btn.style.color = '#71717a';
+      form.reset();
+      setTimeout(() => {
+        btn.textContent = 'Send Message →';
+        btn.style.background = '';
+        btn.style.color = '';
+        btn.disabled = false;
+      }, 4000);
+    } else {
+      throw new Error();
+    }
+  } catch {
+    btn.textContent = 'Something went wrong. Try again.';
+    btn.style.background = '#fee2e2';
+    btn.style.color = '#991b1b';
     btn.disabled = false;
-    e.target.reset();
-  }, 4000);
+    setTimeout(() => {
+      btn.textContent = 'Send Message →';
+      btn.style.background = '';
+      btn.style.color = '';
+    }, 4000);
+  }
 }
 </script>
 
