@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pressence — Digital Presence for Caribbean Businesses</title>
+<title>Pressence | Digital Presence for Caribbean Businesses</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
@@ -11,17 +11,17 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --bg: #09090b;
-    --bg-2: #111113;
-    --bg-3: #18181b;
-    --border: rgba(255,255,255,0.07);
-    --border-hover: rgba(255,255,255,0.14);
-    --text: #fafafa;
-    --muted: #a1a1aa;
-    --muted-2: #52525b;
+    --bg: #ffffff;
+    --bg-2: #f9f9fb;
+    --bg-3: #f3f3f6;
+    --border: rgba(0,0,0,0.07);
+    --border-hover: rgba(0,0,0,0.13);
+    --text: #0a0a0c;
+    --muted: #52525b;
+    --muted-2: #a1a1aa;
     --accent: #d4f24a;
-    --accent-dim: rgba(212,242,74,0.12);
-    --accent-dim2: rgba(212,242,74,0.06);
+    --accent-dim: rgba(212,242,74,0.2);
+    --accent-dim2: #ebebef;
     --font-display: 'Syne', sans-serif;
     --font-body: 'DM Sans', sans-serif;
   }
@@ -42,7 +42,7 @@
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
     padding: 1.25rem 2rem;
-    background: rgba(9,9,11,0.85);
+    background: rgba(255,255,255,0.92);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border);
   }
@@ -575,7 +575,7 @@
     Your business<br>deserves a<br><em>real presence.</em>
   </h1>
   <p class="fade-up delay-2">
-    We build websites, digital tools, and online systems for Caribbean businesses and artists who are serious about growth.
+    We build websites, digital tools, and online systems for Caribbean businesses serious about growth.
   </p>
   <div class="hero-actions fade-up delay-3">
     <a href="#contact" class="btn-primary">Start a Project</a>
@@ -613,13 +613,7 @@
       <p>Professional, fast, mobile-first websites for SMEs and entrepreneurs. Built to convert visitors into customers — not just look good.</p>
       <span class="service-tag">From $500 USD</span>
     </div>
-    <div class="service-card">
-      <div class="service-icon">🎵</div>
-      <h3>Artist & Creator Sites</h3>
-      <p>Exclusive-design websites for musicians, influencers, and creatives. Each template is locked after purchase — your site stays unique, always.</p>
-      <span class="service-tag">Exclusive templates</span>
-    </div>
-    <div class="service-card">
+<div class="service-card">
       <div class="service-icon">⚙️</div>
       <h3>Digital Tools & SaaS</h3>
       <p>Custom web applications, booking systems, dashboards, and automation tools. If you have a process that needs digitizing, we build it.</p>
@@ -786,7 +780,7 @@
         <select id="service">
           <option value="">Select a service...</option>
           <option>Business website</option>
-          <option>Artist / Creator site</option>
+
           <option>Booking system</option>
           <option>Custom digital tool / SaaS</option>
           <option>Landing page / funnel</option>
@@ -818,8 +812,8 @@ function handleSubmit(e) {
   e.preventDefault();
   const btn = e.target.querySelector('.form-submit');
   btn.textContent = 'Message sent ✓';
-  btn.style.background = '#3f3f46';
-  btn.style.color = '#a1a1aa';
+  btn.style.background = '#e4e4e7';
+  btn.style.color = '#71717a';
   btn.disabled = true;
   setTimeout(() => {
     btn.textContent = 'Send Message →';

@@ -1,6 +1,6 @@
 # Pressence
 
-Digital presence and web services for Caribbean businesses and artists.
+Digital presence and web services for Caribbean businesses.
 
 ## Stack
 
